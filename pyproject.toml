@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qml-hello"
+authors = [{ name = "Zohar Malamant", email = "ZOM@equinor.com" }]
+description = "Example QML & Python program"
+requires-python = ">=3.8"
+dynamic = ["version"]
+dependencies = [
+  "qtpy",
+  "PySide6",
+]
+scripts = { hello = "qml_hello.main:main" }
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-qt",
+  "mypy",
+]
